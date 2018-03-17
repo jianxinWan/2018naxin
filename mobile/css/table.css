@@ -1,0 +1,522 @@
+/*登录CSS*/
+#mod{
+    display: none;
+}
+#login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/1509936959836054.png');
+    background-size: 100% auto;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    text-align: center;
+    display: none;
+    z-index: 4;
+}
+
+#login .sign-table{
+    width: 100%;
+    height: 100%;
+    padding-top: 10%;
+    /*background-color: rgba(255,255,255,0.6);*/
+}
+
+.sign-table .text{
+    width: 70%;
+    height: 3.5rem;
+    background-color: rgba(255,255,255,0.2);
+    display: block;
+    border-radius:90px;
+    border: 1px solid rgba(255,255,255,0);
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    font-size:1.2rem;
+}
+
+.text input{
+    width: 80%;
+    height: 3.5rem;
+    margin: 0 auto;
+    display: block;
+    background-color: rgba(255,255,255,0);
+    letter-spacing: 0.2rem;
+    outline: none;
+    -webkit-appearance: none;
+    line-height: 3rem;
+    border:none;
+    color: white;
+
+}
+
+.text .small{
+    width: 35%;
+    float: left;
+    padding-left: 2rem;
+}
+
+.text .vcode{
+    width: 35%;
+    height: 2rem;
+    margin: 0.8rem auto;
+    display: block;
+}
+
+.sign-table .sign-in{
+    width: 50%;
+    background-color: rgb(255,255,255);
+    font-size: 1.3rem;
+    line-height: 3.5rem;
+    font-weight: bold;
+    color:rgb(243,83,60);
+}
+.waitLogin{
+    display: none;
+    position: absolute;
+    width: 50%;
+    height:3.5rem;
+    left:50%;
+    margin-left: -25%;
+    border-radius:90px;
+    background-color: rgb(255,255,255);
+    font-size: 1.3rem;
+    line-height: 3.5rem;
+}
+@-webkit-keyframes waitLogin {
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(-360deg);}
+}
+@keyframes waitLogin {
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(-360deg);}
+}
+.circleMove{
+    position: absolute;
+    width: 1.4rem;
+    height:1.4rem;
+    border: 3px solid #F3533C;
+    border-radius: 50%;
+    border-top-color: white;
+    left:50%;
+    margin-left: -0.7rem;
+    top: 0.65rem;
+    animation: waitLogin linear 1.5s both infinite;;
+}
+
+/*报名表单*/
+
+#signup{
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    position: absolute;
+    right: 0;
+    top:0;
+    display: none;
+}
+
+#signup .header{
+    width: 100%;
+    height: 15%;
+    /*background-color: rgba(255,255,255,0);*/
+    position: relative;
+}
+
+.header .circle{
+    width:28%;
+    height: auto;
+    border-radius: 50%;
+    top:38%;
+    left: 35%;
+    position: absolute;
+    z-index: 6;
+    border: 0.5rem white solid;
+    background: #67A869;
+    background-image: url('../img/shot-lg1.png');
+    background-size: 90% auto;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.header .small , .header .leftsmall{
+    width: 20%;
+    height: 6rem;
+    border-radius: 50%;
+    top:50%;
+    left: 60%;
+    position: absolute;
+    z-index: 5;
+    border: 0.3rem white solid;
+    background-color: #67A869;
+    background-image: url('../img/dashu.png');
+    background-size: 75% auto;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.header .leftsmall{
+    background-image: url('../img/nvren.png');
+    background-size:75%;
+    background-position: bottom;
+    left: 20%;
+}
+
+#signup .table{
+    width: 100%;
+    height: 85%;
+    background: white;
+    z-index: 7;
+}
+
+.table .maininfor{
+    width: 100%;
+    height: 80%;
+    padding-top: 7rem;
+}
+.maininfor .infor-line{
+    width: 60%;
+    height: 2rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+.infor-line .infor-name{
+    width: 35%;
+    height: 100%;
+    float: left;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height:2rem;
+    color: black;
+}
+
+.infor-name .red{
+    color: red;
+}
+
+.maininfor textarea{
+    display: block;
+    width: 60%;
+    height: 6rem;
+    margin: 1rem auto;
+    border: 1px solid gray;
+    text-align: left;
+    font-size: 1rem;
+    color: gray;
+    letter-spacing: 0.1rem;
+}
+
+.maininfor #sub{
+    width: 33%;
+    height: 2.5rem;
+    font-size: 1.3rem;
+    margin:0 auto;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+    color: white;
+    text-align: center;
+    background:#67A869;
+}
+
+.infor-line .infor-value{
+    width: 60%;
+    height: 100%;
+    float: left;
+    font-size: 1rem;
+    color: black;
+    line-height:1.8rem;
+    display: block;
+    border: none;
+    outline: none;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    border-bottom: 1px solid gray;
+}
+
+.infor-line #direction{
+    margin-left: 10%;
+    width: 48%;
+    height: 2rem;
+    float: left;
+    line-height:2rem;
+    margin-top:2.5%;
+    border: 1px solid gray;
+    position: relative;
+}
+
+#direction .selected{
+    width: 100%;
+    height: 400%;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    position: absolute;
+    border: 1px solid gray;
+    top: 2rem;
+    background-color: lightgray;
+    display: none;
+}
+
+.selected .one{
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    border-bottom: 1px solid white;
+}
+
+#direction .show{
+    width: 20%;
+    height:100%;
+    float: left;
+    /*background-color: black;*/
+    background-image: url('../img/jiantou.png');
+    background-size: 75% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#direction #now{
+    width: 80%;
+    height: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    color: black;
+    float: left;
+}
+
+.one :link,visited{
+    background-color: lightgray;
+    font-size: normal;
+}
+.one:hover,active{
+    background-color: gray;
+    font-size: bold;
+}
+
+/*改变input默认颜色*/
+.text :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:rgba(255,255,255,0.7);
+    font-size: 1rem;
+    line-height: 3rem;
+}
+
+.text::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:rgba(255,255,255,0.7);
+    font-size: 1rem;
+    line-height: 3rem;
+}
+
+.text input:-ms-input-placeholder{
+    color:rgba(255,255,255,0.7);
+    font-size: 1rem;
+    line-height: 3rem;
+}
+
+.text input::-webkit-input-placeholder{
+    color:rgba(255,255,255,0.7);
+    font-size: 1rem;
+    line-height: 3rem;
+}
+
+/*状态查询*/
+#status{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    z-index: 9;
+    display: none;
+}
+
+#status .status-pop{
+    width: 80%;
+    height: 80%;
+    margin: 10% auto;
+}
+
+.status-pop .pop-top{
+    width: 90%;
+    height: 50%;
+    margin:  0 auto;
+    margin-bottom: -10px;
+    background-color: #ffd950;
+    border-radius: 10px;
+    background-image: url('../img/11111.png');
+    background-size: 90% auto;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.status-pop .pop-bottom{
+    width: 100%;
+    height: 45%;
+    background-color: white;
+    padding-top: 5%;
+}
+
+.pop-bottom .pop-content{
+    width: 90%;
+    height: 90%;
+    text-align: left;
+    border: 1px solid lightgray;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+.pop-content .stusname{
+    padding-top:1rem;
+    padding-left:1rem;
+    width: 100%;
+    height: 2rem;
+    font-size: 1.3rem;
+}
+
+.pop-content .pop-lines{
+    width: 80%;
+    padding-top: 1rem;
+    height: 3rem;
+    line-height: 2rem;
+    margin: 0 auto;
+}
+
+.pop-content #signedGroup{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.pop-content .pop-status{
+    width: 10rem;
+    height: 2rem;
+    margin:  1.5rem auto;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.pop-status .pop-star{
+    width:1rem;
+    height: 2rem;
+    background-image: url('../img/star.png');
+    background-size: 100% auto;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.pop-status #pop-words{
+    width: 8rem;
+    height: 100%;
+    float: left;
+}
+
+/*成功弹窗*/
+#suc,#fail{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    background-color: rgba(0,0,0,0.3);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    display: none;
+}
+
+#fail .pop, #suc .pop{
+    width: 18rem;
+    height: 12rem;
+    background: white;
+    position: relative;
+    border-radius: 10px;
+    margin: 10rem auto;
+}
+
+.pop .emo{
+    width: 7rem;
+    height: 7rem;
+    background-color: white;
+    border-radius: 90px;
+    position: absolute;
+    top:-3.5rem;
+    left: 5.5rem;
+}
+
+.emo .img{
+    width: 6rem;
+    height: 6rem;
+    background-size: 100% auto;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin: 0.5rem auto;
+    background-color:gray;
+    border-radius: 90px;
+}
+
+.imgsad {
+    background-image: url('../img/sad.png');
+}
+
+.imghappy{
+    background-image: url('../img/happy.png');
+}
+
+.pop .content{
+    width: 80%;
+    height: auto;
+    padding-top: 3.5rem;
+    line-height: 3rem;
+    font-size:1.2rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pop button{
+    width: 40%;
+    display: block;
+    margin: 1rem auto;
+    height: 2rem;
+    line-height: 2rem;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    color:rgba(255,255,255,0.8);
+    border: none;
+}
+
+#logOut{
+    position: absolute;
+    display: block;
+    text-align: center;
+    line-height: 2rem;
+    top: 2rem;
+    left:2rem;
+    width:2rem;
+    height: 2rem;
+    border: none;
+    z-index: 9;
+    border-radius: 0.4rem;
+    color: white;
+}
+.loginOutBtn{
+    width: 2rem;
+    height:2rem;
+    background-image: url("../img/return.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
