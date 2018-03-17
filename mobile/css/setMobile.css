@@ -1,0 +1,27 @@
+
+html {
+    height: 100%;
+    overflow: hidden;
+}
+body.mb-rotate {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate3d(-100%, 0, 0) rotate(-90deg) translate3d(50%, 0, 0);
+  transform-origin: 100% 0;
+}
+.mb-hide,
+.mb-iphone-show,
+.mb-gphone-show,
+.mb-wx-show,
+.mb-browser-show {
+    display: none;
+}
+
+body .mb-show,
+.mb-iphone .mb-iphone-show,
+.mb-gphone .mb-gphone-show,
+.mb-wx .mb-wx-show,
+.mb-browser .mb-browser-show {
+    display: block;
+}
