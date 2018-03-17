@@ -1,0 +1,73 @@
+
+#page-1 {
+    text-align: center;
+    background-image: url("../img/page1/back.jpg");
+    background-size:100% 100%;
+}
+
+#page-1 .title{
+    width: 750px;
+    height: 60px;
+    left: 0;
+    right: 0;
+    margin: 40px auto;
+    position: absolute;
+    text-align: center;
+}
+
+.page1-title-img {
+    float: left;
+    height: 60px;
+}
+
+.page1-title-p {
+    font-size: 46px;
+    font-family: myfont;
+    /*font-weight: bold;*/
+    float: left;
+    width: 680px;
+    line-height: 46px;
+    padding: 7px 0;
+    margin-left: 10px;
+}
+
+.page1-login-button {
+    top: 75%;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    font-family: myfont;
+    font-weight: bold;
+    text-indent: 10px;
+    letter-spacing: 10px;
+    transition: all 0.5s;
+    background-color: transparent;
+}
+
+.page1-godown {
+    left: 0;
+    right: 0;
+    bottom: 3%;
+    height: 82px;
+    margin: 0 auto;
+    width: 360px;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+}
+
+.page1-godown-p {
+    font-size: 40px;
+    line-height: 40px;
+    text-indent: 4px;
+    font-family: myfont;
+    letter-spacing: 4px;
+}
+
+.page1-godown-img {
+    margin-top: 10px;
+    width: 32px;
+}
