@@ -130,13 +130,15 @@
 	z-index: 1;
 	height: 80px; 
 	position: absolute;
-	margin-top: -140px;
-	margin-left: -65px;
+	top: 50%;
+	margin-top: -40px;
+	left: 50%;
+	margin-left: -62px;
 	transition: all 0.5s;
 }
 
 .page3-group:hover .web-img2 {
-	margin-top: -280px;
+	top: 15%;
 }
 
 .web-img2-secondStep {
@@ -145,15 +147,16 @@
 
 .web-img3 {
 	z-index: 1;
-	margin-left: -500px;
-	margin-top: -180px;
+	left: -400px;
+	margin-top: -80px;
+	top: 61%;
 	height: 160px;
 	position: absolute;
 	transition: all 0.5s;
 }
 
 .page3-group:hover .web-img3 {
-	margin-left: -90px;
+	left: 13px;
 }
 
 .web-img3-secondStep {
@@ -163,15 +166,16 @@
 
 .web-img4 {
 	z-index: 1;
-	margin-top: -200px;
-	margin-left: 300px;
+	margin-top: -100px;
+    top: 61%;
+	left: 400px;
 	height: 200px;
 	position: absolute;
 	transition: all 0.5s;
 }
 
 .page3-group:hover .web-img4 {
-	margin-left: -100px;
+	left: 0;
 }
 
 .web-img4-secondStep {
@@ -259,14 +263,16 @@
 .android-img2 {
 	z-index: 1;
 	height: 60px; 
+	top: 54%;
+    left: 42%;
+	margin-left: -70px;
+	margin-top: -40px;
 	position: absolute;
-	margin-top: -130px;
-	margin-left: -90px;
 	transition: all 0.5s;
 }
 
 .page3-group:hover .android-img2 {
-	margin-top: -270px;
+	top: 18%;
 }
 
 .android-img2-secondStep {
@@ -275,15 +281,16 @@
 
 .android-img3 {
 	z-index: 1;
-	margin-left: -500px;
-	margin-top: -180px;
+	left: -400px;
+	margin-top: -80px;
+	top: 61%;
 	height: 160px;
 	position: absolute;
 	transition: all 0.5s;
 }
 
 .page3-group:hover .android-img3 {
-	margin-left: -50px;
+	left: 50px;
 }
 
 .android-img3-secondStep {
@@ -292,15 +299,16 @@
 
 .android-img4 {
 	z-index: 1;
-	margin-top: -160px;
-	margin-left: 300px;
 	height: 130px;
 	position: absolute;
 	transition: all 0.5s;
+	margin-top: -100px;
+    top: 73%;
+	left: 400px;
 }
 
 .page3-group:hover .android-img4 {
-	margin-left: -100px;
+	left: 0;
 }
 
 .android-img4-secondStep {
