@@ -20,11 +20,11 @@ let page3 = {
 	    	group.onclick = function() {
 	    		that.groupGo(groups, group, groupLeft, groupRight, groupImg);
 	    	}
-	    	back.onclick = function() {
+	    	back.onclick = function(event) {
 	    		event.stopPropagation();
     			that.groupBack(groups, group, groupLeft, groupRight, groupImg);
 	    	}
-	    	enroll.onclick = function() {
+	    	enroll.onclick = function(event) {
 	    		event.stopPropagation();
 	    		loginEnroll.enrollShow(login_enroll, i);
 	    	}

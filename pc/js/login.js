@@ -532,6 +532,12 @@ let loginEnroll = {
                     this.login.className = this.login.className + ' login-form-turn';
 					this.login_front.className = this.login_front.className + ' login-form-front_turn';
 					this.login_back.className = this.login_back.className + ' login-form-back_turn';
+					if(loginEnroll.loginFlag) {
+						layer.tips('点我退出登录', '#loginP', {
+					  		tips: [1, '#F061B3'],
+					  		time: 2000
+						});
+					}
                 } else {
                 	
                 }
