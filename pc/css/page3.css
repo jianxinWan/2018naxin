@@ -1,3 +1,4 @@
+<<<<<<< HEAD:pc/css/page3.css
 #page-3 {
 	background-image: url('../img/page3/back.jpg');
 	background-repeat: no-repeat;
@@ -409,3 +410,424 @@
 	height: 40px;
 	font-weight: bold;
 }
+=======
+#page-3 {
+	background-image: url('../img/page3/back.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	/*background-color: #F50AA5;*/
+}
+
+.page3-tuimg {
+	/*width: 200px;*/
+	height: 280px;
+	margin: 250px 20px;
+	float: left;
+}
+
+.page3-groups {
+	width: 1040px;
+	height: 640px;
+	padding: 20px;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.page3-groups-firstStep {
+	pointer-events: none;
+}
+
+.page3-column {
+	/*position: absolute;*/
+	width: 1040px;
+	height: 300px;
+}
+
+/*每个组*/
+.page3-group {
+	opacity: 0;
+	z-index: 0;
+	width: 500px;
+	height: 300px;
+	cursor: pointer;
+	display: none;
+	overflow: hidden;
+	position: absolute;
+	text-align: center;
+	border-radius: 50px;
+	box-sizing: border-box;
+	box-shadow: -15px 15px 15px rgba(6, 17, 47, 0.2);
+}
+
+.page3-group-show {
+	opacity: 1;
+	display: block;
+	transition: all 0.5s;
+}
+
+/*组动画*/
+.page3-group-firstStep {
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+	opacity: 1;
+}
+
+.page3-group-secondStep {
+	z-index: 2;
+	position: absolute;
+	margin-top: 220px !important;
+	margin-left: 420px !important;
+}
+
+.page3-group-thirdStep {
+	margin-top: 0px !important;
+	margin-left: 0px !important;
+	width: 1040px;
+	height: 640px;
+	border-radius: 50px;
+}
+
+/*组内*/
+.page3-group-left {
+	position: absolute;
+	width: 200px;
+	height: 300px;
+	left: 50%;
+	margin-left: -100px;
+}
+
+.page3-group-right {
+	display: none;
+	opacity: 0;
+	margin: 70px 40px 70px 280px;
+	width: 720px;
+	height: 500px;
+	position: absolute;
+	transition: 1s;
+}
+
+/*组内动画*/
+.page3-group-left-secondStep {
+	left: 0;
+	margin: 170px 0 0 40px;
+}
+
+.page3-group-right-thirdStep {
+	display: block;
+}
+
+.page3-group-right-forthStep {
+	opacity: 1;
+}
+
+
+/*web特殊*/
+
+.web-img1 {
+	z-index: 0;
+	height: 200px;
+	margin-top: 50px;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .web-img1 {
+	margin-top: 80px;
+}
+
+.web-img2 {
+	z-index: 1;
+	height: 80px; 
+	position: absolute;
+	top: 50%;
+	margin-top: -40px;
+	left: 50%;
+	margin-left: -62px;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .web-img2 {
+	top: 15%;
+}
+
+.web-img2-secondStep {
+	margin-top: -280px;
+}
+
+.web-img3 {
+	z-index: 1;
+	left: -400px;
+	margin-top: -80px;
+	top: 61%;
+	height: 160px;
+	position: absolute;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .web-img3 {
+	left: 13px;
+}
+
+.web-img3-secondStep {
+	margin-left: -90px;
+}
+
+
+.web-img4 {
+	z-index: 1;
+	margin-top: -100px;
+    top: 61%;
+	left: 400px;
+	height: 200px;
+	position: absolute;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .web-img4 {
+	left: 0;
+}
+
+.web-img4-secondStep {
+	margin-left: -100px;
+}
+
+/*ios特殊*/
+
+.ios-img1 {
+	z-index: 0;
+	height: 200px;
+	margin-top: 50px;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .ios-img1 {
+	margin-top: 80px;
+}
+
+.ios-img2 {
+	z-index: 1;
+	height: 80px; 
+	position: absolute;
+	margin-top: -150px;
+	margin-left: -80px;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .ios-img2 {
+	margin-top: -285px;
+}
+
+.ios-img2-secondStep {
+	margin-top: -285px;
+}
+
+.ios-img3 {
+	z-index: 1;
+	margin-left: -500px;
+	margin-top: -180px;
+	height: 160px;
+	position: absolute;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .ios-img3 {
+	margin-left: -50px;
+}
+
+.ios-img3-secondStep {
+	margin-left: -50px;
+}
+
+
+.ios-img4 {
+	z-index: 1;
+	margin-top: -140px;
+	margin-left: 300px;
+	height: 100px;
+	position: absolute;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .ios-img4 {
+	margin-left: -100px;
+}
+
+.ios-img4-secondStep {
+	margin-left: -100px;
+}
+
+/*android特殊*/
+
+.android-img1 {
+	z-index: 0;
+	height: 200px;
+	margin-top: 50px;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .android-img1 {
+	margin-top: 80px;
+}
+
+.android-img2 {
+	z-index: 1;
+	height: 60px; 
+	top: 54%;
+    left: 42%;
+	margin-left: -70px;
+	margin-top: -40px;
+	position: absolute;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .android-img2 {
+	top: 18%;
+}
+
+.android-img2-secondStep {
+	margin-top: -270px;
+}
+
+.android-img3 {
+	z-index: 1;
+	left: -400px;
+	margin-top: -80px;
+	top: 61%;
+	height: 160px;
+	position: absolute;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .android-img3 {
+	left: 50px;
+}
+
+.android-img3-secondStep {
+	margin-left: -50px;
+}
+
+.android-img4 {
+	z-index: 1;
+	height: 130px;
+	position: absolute;
+	transition: all 0.5s;
+	margin-top: -100px;
+    top: 73%;
+	left: 400px;
+}
+
+.page3-group:hover .android-img4 {
+	left: 0;
+}
+
+.android-img4-secondStep {
+	margin-left: -100px;
+}
+
+
+/*javaweb特殊*/
+
+.javaweb-img1 {
+	z-index: 0;
+	height: 200px;
+	margin-top: 50px;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .javaweb-img1 {
+	margin-top: 80px;
+}
+
+.javaweb-img2 {
+	z-index: 1;
+	height: 60px; 
+	position: absolute;
+	margin-top: -130px;
+	margin-left: -90px;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .javaweb-img2 {
+	margin-top: -270px;
+}
+
+.javaweb-img2-secondStep {
+	margin-top: -270px;
+}
+
+
+.javaweb-img3 {
+	z-index: 1;
+	margin-left: -500px;
+	margin-top: -180px;
+	height: 160px;
+	position: absolute;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .javaweb-img3 {
+	margin-left: -110px;
+}
+
+.javaweb-img3-secondStep {
+	margin-left: -110px;
+}
+
+.javaweb-img4 {
+	z-index: 1;
+	margin-top: -160px;
+	margin-left: 300px;
+	height: 130px;
+	position: absolute;
+	transition: all 0.5s;
+}
+
+.page3-group:hover .javaweb-img4 {
+	margin-left: -100px;
+}
+
+.javaweb-img4-secondStep {
+	margin-left: -100px;
+}
+
+
+.page3-group-p1 {
+	color: white;
+	font-size: 25px;
+	line-height: 25px;
+	text-indent: 4px;
+	letter-spacing: 4px;
+	padding: 20px 0 20px 20px;
+	text-align: left;
+}
+
+.page3-group-p2 {
+	text-align: justify !important;
+	color: white;
+	font-size: 20px;
+	line-height: 30px;
+	text-indent: 40px;
+	letter-spacing: 2px;
+	padding: 20px 0 20px 20px;
+	text-align: left;
+}
+
+.page3-group-button1 {
+	border-radius: 20px;
+	cursor: pointer;
+	pointer-events: auto;
+	letter-spacing: 20px;
+	text-indent: 20px;
+	position: absolute;
+	bottom: 0;
+	background-color: white;
+	border: none;
+	width: 180px;
+	height: 40px;
+	font-weight: bold;
+}
+>>>>>>> lrh/fix-macbug:css/page3.css
