@@ -122,7 +122,7 @@
 	transition: all 0.5s;
 }
 
-.page3-group:hover .web-img1 {
+.page3-group-left:hover .web-img1 {
 	margin-top: 80px;
 }
 
@@ -137,13 +137,17 @@
 	transition: all 0.5s;
 }
 
-.page3-group:hover .web-img2 {
+.page3-group-left:hover .web-img2 {
 	top: 15%;
 }
 
 .web-img2-secondStep {
-	margin-top: -280px;
+	margin-top: -180px;
 }
+
+/*.page3-group:hover .web-img2 {
+	margin-top: -180px;
+}*/
 
 .web-img3 {
 	z-index: 1;
@@ -155,12 +159,13 @@
 	transition: all 0.5s;
 }
 
-.page3-group:hover .web-img3 {
+.page3-group-left:hover .web-img3 {
 	left: 13px;
 }
 
 .web-img3-secondStep {
-	margin-left: -90px;
+	left: 13px;
+	margin-top: -100px;
 }
 
 
@@ -174,12 +179,13 @@
 	transition: all 0.5s;
 }
 
-.page3-group:hover .web-img4 {
+.page3-group-left:hover .web-img4 {
 	left: 0;
 }
 
 .web-img4-secondStep {
-	margin-left: -100px;
+	margin-top: -140px;
+	margin-left: -400px;
 }
 
 /*ios特殊*/
@@ -256,7 +262,7 @@
 	transition: all 0.5s;
 }
 
-.page3-group:hover .android-img1 {
+.page3-group-left:hover .android-img1 {
 	margin-top: 80px;
 }
 
@@ -271,12 +277,12 @@
 	transition: all 0.5s;
 }
 
-.page3-group:hover .android-img2 {
+.page3-group-left:hover .android-img2 {
 	top: 18%;
 }
 
 .android-img2-secondStep {
-	margin-top: -270px;
+	margin-top: -190px;
 }
 
 .android-img3 {
@@ -289,12 +295,13 @@
 	transition: all 0.5s;
 }
 
-.page3-group:hover .android-img3 {
+.page3-group-left:hover .android-img3 {
 	left: 50px;
 }
 
 .android-img3-secondStep {
-	margin-left: -50px;
+	margin-top: -100px;
+	margin-left: 440px;
 }
 
 .android-img4 {
@@ -307,12 +314,13 @@
 	left: 400px;
 }
 
-.page3-group:hover .android-img4 {
+.page3-group-left:hover .android-img4 {
 	left: 0;
 }
 
 .android-img4-secondStep {
-	margin-left: -100px;
+	margin-top: -120px;
+	margin-left: -400px;
 }
 
 
