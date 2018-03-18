@@ -520,3 +520,19 @@
     background-repeat: no-repeat;
 }
 
+/********************************/
+#loading{
+    position:absolute;
+    width:28rem;
+    height:20rem;
+    left:50%;
+    margin-left: -10rem;
+    top: 30%;
+    display: none;
+}
+.loadingPic{
+    position: absolute;
+    left:4rem;
+    width:20rem;
+    height:auto;
+}

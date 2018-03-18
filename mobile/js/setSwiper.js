@@ -282,7 +282,14 @@ function developerShow(){
         "探寻这里的秘密；\n" +
         "体验这里的挑战；\n" +
         "成为这里的主人；\n" +
-        "加入3g，加入网页搜索，你，可以影响世界。");
-    console.log("如果你是一名web前端开发者");
-    console.log("");
+        "加入3g，加入web组，你，可以影响世界。");
+}
+function loadingShow(func){
+    if(func==0){
+        $("#loading").css('display','none');
+    }else if(func==1){
+        $("#loading").css('display','block');
+    }else{
+        console.log("图片显示参数错误！");
+    }
 }

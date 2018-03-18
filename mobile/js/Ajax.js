@@ -1,5 +1,6 @@
 //获取验证码,本地存储信息
 function getInfo(){
+    loadingShow(1);
     $.ajax({
         url : 'https://join.xiyoumobile.com/api/getinf',
         type : 'get',
@@ -8,6 +9,7 @@ function getInfo(){
         //     withCredentials: true,
         // },
         success : function(r){
+            loadingShow(0);
             if(r.err){
                 getVcode();
             }else{
@@ -17,12 +19,10 @@ function getInfo(){
                     if(r.result.type === 'it has login'){
                         $("#login").css('display','none');
                         $("#signup").css('display','none');
-                        console.log('getVocde里面显示状态界面');
                         clearInput();
                         showStatustable(r.result.inf);
                     }else{
                         $("#login").css('display','none');
-                        console.log('getVocde里面显示报名界面');
                         clearInput();
                         showSigntable(r.result.inf);
                     }
@@ -433,16 +433,8 @@ function changeErr(str){
 }
 
 function clearInput(){
-    $('#login input').val("");
+    $('#login #pass').val("");
+    $('#login #vcode').val("");
     $('#signup input').val("");
     $('#signup textarea').val("");
-}
-
-function checkGrade(grade){
-    grade = grade.replace(/[^0-9]/ig,"").slice(2,4);
-    if(grade < 16){
-        return false;
-    }else{
-        return true;
-    }
 }
