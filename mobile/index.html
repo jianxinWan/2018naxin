@@ -28,7 +28,7 @@
                     <img class="img_1 pt-page-moveFromTop"  src="img/cover.png" />
                     <img class="img_2 pt-page-moveFromLeft"  src="img/font1.png" />
                     <img class="img_3 pt-page-moveFromRight"   src="img/font2.png" />
-                    <img class="icon_up pt-page-moveIconUp"  src="img/icon_up.png" />
+                    <img class="icon_up pt-page-moveIconUp " id="arrows1"  src="img/icon_up.png" />
                 </div>
             </div>
             <div class="swiper-slide" data-hash="slide2" id="slide2" >
@@ -41,7 +41,7 @@
                         <div class="all-text-box">
                             <strong>我们是谁？</strong>
                             <p class="all-text1">西邮移动应用开发实验室</p>
-                            <p class="all-text2">亦称&nbsp西邮3G手机应用开发实验室</p>
+                            <p class="all-text2">亦称&nbsp西邮3G实验室</p>
                             <p class="all-text3">最独特·最新潮·最合理·最霸气·最先进</p>
                         </div>
                         <br/>
@@ -70,7 +70,7 @@
                         </li>
                     </ul>
                 </div>
-                <img class="icon_up pt-page-moveIconUp" src="img/icon_up.png" />
+                <img class="icon_up pt-page-moveIconUp" id="arrows2" src="img/icon_up.png" />
             </div>
             <div class="swiper-slide"  data-hash="slide3" id="slide3" >
                 <div class="swiper-container swiper-container-h3">
@@ -88,9 +88,9 @@
                                 </div>
                                 <img class="page3-1-img_2 " src="./img/circle-production.png"/>
                                 <img class="page3-1-img_3 " src="img/people.png" />
-                                <img class="icon_up pt-page-moveIconUp" src="img/icon_up.png" />
-                                <div class="page3-1-hint ">
-                                    <p>滑动查看详细信息&nbsp &gt</p>
+                                <img class="icon_up pt-page-moveIconUp" id="arrows3" src="img/icon_up.png" />
+                                <div class="page3-1-hint " id="hint3">
+                                    <p>滑动查看详细信息和报名&nbsp &gt</p>
                                 </div>
                                 <img class="page3-1-img_7  " src="img/floating_develop.png" />
                             </div>
@@ -174,16 +174,22 @@
                                                         <div class="selected">
                                                             <div class="one">Web</div>
                                                             <div class="one">iOS</div>
-                                                            <div class="one">Andorid</div>
+                                                            <div class="one">Android</div>
                                                             <div class="one">Java后台</div>
+                                                            <div class="one">未明确意向</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="infor-line">
                                                     <div class="infor-name">MESSAGE<span class="red">*</span>：</div>
                                                 </div>
-                                                <textarea id="mess"></textarea>
+                                                <textarea id="mess"  placeholder="你有什么话想对我们说嘛 :)最多100字" rows="5"  maxlength="100" onchange="this.value=this.value.substring(0, 100)" onkeydown="this.value=this.value.substring(0, 100)" onkeyup="this.value=this.value.substring(0, 100)"
+                                                ></textarea>
                                                 <div id="sub">提 交</div>
+                                                <div id="subWait">
+                                                    <div class="circleMoveTop"></div>
+                                                    <div class="circleMoveSub"></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -231,8 +237,12 @@
                                             <button>确 定</button>
                                         </div>
                                     </div>
+                                    <!-- 延迟加载 -->
                                     <div id="loading">
                                         <img src="img/loading.gif" alt="loading" class="loadingPic" />
+                                        <div class="loadingHint">
+                                            <span>点我刷新</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -256,10 +266,10 @@
                                 </div>
                                 <img class="page4-1-img_2 " src="img/circle-design.png" />
                                 <img class="page4-1-img_3 " src="img/people_design.png" />
-                                <div class="page4-1-hint">
-                                    <p>滑动查看详细信息&nbsp &gt</p>
+                                <div class="page4-1-hint" id="hint4">
+                                    <p>滑动查看详细信息和报名&nbsp &gt</p>
                                 </div>
-                                <img class="icon_up pt-page-moveIconUp " src="img/icon_up.png" />
+                                <img class="icon_up pt-page-moveIconUp " id="arrows4" src="img/icon_up.png" />
                                 <img class="page4-1-img_7 " src="img/floating_design.png" />
                             </div>
                         </div>
@@ -302,10 +312,10 @@
                                 </div>
                                 <img class="page5-1-img_2  " src="img/circle.png" />
                                 <img class="page5-1-img_3  " src="img/people_production.png" />
-                                <div class="page5-1-hint">
-                                    <p>滑动查看详细信息&nbsp &gt</p>
+                                <div class="page5-1-hint" id="hint5">
+                                    <p>滑动查看详细信息和报名&nbsp &gt</p>
                                 </div>
-                                <img class="page5-1-img_6 pt-page-moveIconUp " src="img/icon_up.png" />
+                                <img class="page5-1-img_6 pt-page-moveIconUp " id="arrows5" src="img/icon_up.png" />
                                 <img class="page5-1-img_7  " src="img/floating_production.png" />
                                 <img class="page5-1-img_8  " src="img/pic_shadow_production.png" />
                             </div>
@@ -341,7 +351,7 @@
                             <div class="wrap">
                                 <div class="page6-1-top">
                                     <div class="page6-1-title">
-                                        <p class="page6-title-text1">用代码结构世界</p>
+                                        <p class="page6-title-text1">用代码架构世界</p>
                                         <p class="page6-title-text2">让你的思想徜徉其中</p>
                                     </div>
                                     <div class="page6-1-group">
@@ -350,8 +360,8 @@
                                 </div>
                                 <img class="page6-1-img_2 " src="./img/circle-javaWeb.png"/>
                                 <img class="page6-1-img_3 " src="img/javaweb-people.png" />
-                                <div class="page6-1-hint">
-                                    <p>滑动查看详细信息&nbsp &gt</p>
+                                <div class="page6-1-hint" id="hint6">
+                                    <p>滑动查看详细信息和报名&nbsp &gt</p>
                                 </div>
                                 <img class="page6-1-img_7 " src="img/floating_production.png" />
                             </div>

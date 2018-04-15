@@ -7,79 +7,83 @@ window.onload=function(){
                 animating(this.activeIndex);//根据页面索引动态加载css
                 slideProblem(this.activeIndex,swiperH3,swiperH4,swiperH5,swiperH6);
                 setGroup(this.activeIndex);
+                slideArrows(this);//设置箭头点击事件
             },
-            slideChangeTransitionStart: function(){
+            // slideChangeTransitionStart: function(){
+            //     insertDom(this.activeIndex,insertHtml);
+            // },
+            slideChange: function(){
                 insertDom(this.activeIndex,insertHtml);
-            },
+            }
         },
         resistanceRatio:0,
     });
     //横屏分页创建实例
     var swiperH3 = new Swiper('.swiper-container-h3', {
-        effect : 'coverflow',
-        centeredSlides: true,
-        coverflowEffect: {
-            rotate: 30,
-            stretch: 10,
-            depth: 60,
-            modifier: 2,
-            slideShadows : true
-        },
+        // effect : 'coverflow',
+        // centeredSlides: true,
+        // coverflowEffect: {
+        //     rotate: 30,
+        //     stretch: 10,
+        //     depth: 60,
+        //     modifier: 2,
+        //     slideShadows : true
+        // },
         on: {
-            slideChangeTransitionStart: function(){
+            slideChange: function(){
                 page3SendInfo(this.activeIndex);
-            },
+            }
         },
         resistanceRatio:0,
     });
     var swiperH4 = new Swiper('.swiper-container-h4', {
-        effect : 'coverflow',
-        centeredSlides: true,
-        coverflowEffect: {
-            rotate: 30,
-            stretch: 10,
-            depth: 60,
-            modifier: 2,
-            slideShadows : true
-        },
+        // effect : 'coverflow',
+        // centeredSlides: true,
+        // coverflowEffect: {
+        //     rotate: 30,
+        //     stretch: 10,
+        //     depth: 60,
+        //     modifier: 2,
+        //     slideShadows : true
+        // },
         on: {
-            slideChangeTransitionStart: function(){
+            slideChange: function(){
                 page3SendInfo(this.activeIndex);
             },
         },
         resistanceRatio:0,
     });
     var swiperH5 = new Swiper('.swiper-container-h5', {
-        effect : 'coverflow',
-        centeredSlides: true,
-        coverflowEffect: {
-            rotate: 30,
-            stretch: 10,
-            depth: 60,
-            modifier: 2,
-            slideShadows : true
-        },
+        // effect : 'coverflow',
+        // centeredSlides: true,
+        // coverflowEffect: {
+        //     rotate: 30,
+        //     stretch: 10,
+        //     depth: 60,
+        //     modifier: 2,
+        //     slideShadows : true
+        // },
         on: {
-            slideChangeTransitionStart: function(){
+            slideChange: function(){
                 page3SendInfo(this.activeIndex);
-            },
+            }
         },
         resistanceRatio:0,
     });
     var swiperH6 = new Swiper('.swiper-container-h6', {
-        effect : 'coverflow',
-        centeredSlides: true,
-        coverflowEffect: {
-            rotate: 30,
-            stretch: 10,
-            depth: 60,
-            modifier: 2,
-            slideShadows : true
-        },
+        // effect : 'coverflow',
+        // centeredSlides: true,
+        // coverflowEffect: {
+        //     rotate: 30,
+        //     stretch: 10,
+        //     depth: 60,
+        //     modifier: 2,
+        //     slideShadows : true
+        // },
         on: {
-            slideChangeTransitionStart: function(){
+            slideChange: function(){
                 page3SendInfo(this.activeIndex);
-            },
+            }
         },
         resistanceRatio:0,
     });
@@ -87,24 +91,23 @@ window.onload=function(){
     setInputHeight();
     loginToPage3(swiperH3,swiperH4,swiperH5,swiperH6);
     developerShow();
+    slideArrows(swiperV);
 };
 function aLLClick(){
     // 下面为罗萍写：
-    setInputHeight();
     $('#toSign').click(function(){
         var username = $('#username').val();
         var pass = $('#pass').val();
         var vcode = $('#vcode').val();
-        // if(checkGrade(username)){
-            if(check(username,pass,vcode)){     //前台验证合法
+        if(check(username,pass,vcode)){     //前台验证合法
+            if(checkGrade(username)){
                 toLogin(username,pass,vcode,window.sess);
                 $("#toSign").css('display','none');
                 $(".waitLogin").css('display','block');
+            }else{
+                showFail("你已经过了报名的年纪！");
             }
-        // }else{
-        //     showFail('您没有登录权限！');
-        // }
-        
+        }
     });
     $('.pop button').click(function(){
         $('#suc').css('display','none');
@@ -115,15 +118,16 @@ function aLLClick(){
         getVcode();
     });
     $('#sub').click(function(){
-        var dir = document.getElementById('now').innerHTML;
+        var dir = $("#now").html();
         var tel = $('#phone').val();
         var mail = $('#email').val();
         var mess = $('#mess').val();
         if(checkContact(mail,tel,mess)){
+            $("#sub").css('display','none');
+            $("#subWait").css('display','block');
             toSign(dir,mail,tel,mess);
         }
     });
-    
     $("#logOut").click(loginOut);
     var oSel = document.getElementsByClassName('selected')[0];
     oSel.onclick = function(event){
@@ -153,6 +157,7 @@ function aLLClick(){
         }
         setCircle();
     });
+    loadingClick();
     setCircle();
     setInputHeight();
 }
@@ -226,6 +231,19 @@ function loginToPage3(swiperH3,swiperH4,swiperH5,swiperH6){
         swiperH6.slideTo(2,600,false);
         getInfo();
     });
+
+    $("#hint3").click(function(){
+        swiperH3.slideTo(1,800,false);
+    });
+    $("#hint4").click(function(){
+        swiperH4.slideTo(1,800,false);
+    });
+    $("#hint5").click(function(){
+        swiperH5.slideTo(1,800,false);
+    });
+    $("#hint6").click(function(){
+        swiperH6.slideTo(1,800,false);
+    });
 }
 //第二页小组导航
 function groupLink(myslide){
@@ -292,4 +310,35 @@ function loadingShow(func){
     }else{
         console.log("图片显示参数错误！");
     }
+}
+function loadingClick(){
+    $("#loading").click(function(){
+        getInfo();
+    });
+}
+function slideArrows(myslide){
+    $("#arrows1").click(function(){
+        myslide.slideTo(1,500,false);
+        slide1AnimateClass(0);
+    });
+    $("#arrows2").click(function(){
+        slide1AnimateClass(1);
+        myslide.slideTo(2,500,false);
+        slide2AnimateClass(0);
+    });
+    $("#arrows3").click(function(){
+        slide2AnimateClass(1);
+        myslide.slideTo(3,500,false);
+        slide3AnimateClass(0);
+    });
+    $("#arrows4").click(function(){
+        slide3AnimateClass(1);
+        myslide.slideTo(4,500,false);
+        slide4AnimateClass(0);
+    });
+    $("#arrows5").click(function(){
+        slide4AnimateClass(1);
+        myslide.slideTo(5,500,false);
+        slide5AnimateClass(0);
+    });
 }

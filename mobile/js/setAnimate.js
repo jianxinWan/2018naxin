@@ -47,11 +47,11 @@ function slide0AnimateClass(act) {
 }
 function slide1AnimateClass(act){
     if(act==0){
-        $("#slide2 .img_1").addClass("pt-page-flipInLeft");
+        $("#slide2 .img_1").addClass("pt-page-moveFromLeft");
         $("#slide2 .groupLink li").addClass("pt-page-rubberBand");
         $("#slide2 .icon_up").addClass("pt-page-moveIconUp");
     }else{
-        $("#slide2 .img_1").removeClass("pt-page-flipInLeft");
+        $("#slide2 .img_1").removeClass("pt-page-moveFromLeft");
         $("#slide2 .groupLink li").removeClass("pt-page-rubberBand");
         $("#slide2 .icon_up").removeClass("pt-page-moveIconUp");
     }

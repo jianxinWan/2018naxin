@@ -1,6 +1,5 @@
 //获取验证码,本地存储信息
 function getInfo(){
-    loadingShow(1);
     $.ajax({
         url : 'https://join.xiyoumobile.com/api/getinf',
         type : 'get',
@@ -22,9 +21,8 @@ function getInfo(){
                         clearInput();
                         showStatustable(r.result.inf);
                     }else{
-                        $("#login").css('display','none');
-                        clearInput();
-                        showSigntable(r.result.inf);
+                        getVcode();
+                        $("#login").css('display','block');
                     }
                 }
             }
@@ -42,11 +40,12 @@ function getVcode(){
     $.ajax({
         url : 'https://join.xiyoumobile.com/api/getverCode',
         type : 'get',
-        dataType : 'JSONP',
-        // xhrFields: {
-        //     withCredentials: true,
-        // },
+        dataType : 'JSON',
+        xhrFields: {
+            withCredentials: true,
+        },
         success : function(r){
+            loadingShow(0);
             if(r.err){
                 var str = changeErr(r.errtype);
                 showFail(str);
@@ -82,16 +81,16 @@ function toLogin(username,password,vcode,sess){
     $.ajax({
         url : 'https://join.xiyoumobile.com/api/getaccess',
         type : 'get',
-        dataType : 'JSONP',
+        dataType : 'JSON',
         data :{
             'username':username,
             'password':enpass,
             'vercode':vcode,
             'session':sess
         },
-        // xhrFields: {
-        //     withCredentials: true,
-        // },
+        xhrFields: {
+            withCredentials: true,
+        },
         success : function(r){
             if(r.err){
                 var str = changeErr(r.errtype);
@@ -108,17 +107,15 @@ function toLogin(username,password,vcode,sess){
                     getVcode();
                 }else{
                     var infor = r.result.stateobj||r.result.inf;
-                    sessionStorage.setItem('infor',JSON.stringify(infor));
                     if(r.result.state == "it has login"){
                         $('#login').css('display','none');
                         showSuc("登录成功！");
                         showStatustable(infor);
                     }else{
-                        $('#login').css('display','none');
-                        showSuc("登录成功！");
-                        showSigntable(infor);
+                        showFail("同学，报名已经结束啦");
+                        $(".waitLogin").css('display','none');
+                        $("#toSign").css('display','block');
                     }
-                    
                 }
             }
         },
@@ -132,14 +129,15 @@ function toLogin(username,password,vcode,sess){
 //报名
 function toSign(direction,email,tel,message){
     var dir = toChange(direction);
+    console.log(message);
     var infor = JSON.parse(sessionStorage.getItem('infor'));
     $.ajax({
         url:'https://join.xiyoumobile.com/api/login',
         type:'get',
-        dataType:'JSONP',
-        // xhrFields: {
-        //     withCredentials: true,
-        // },
+        dataType:'JSON',
+        xhrFields: {
+            withCredentials: true,
+        },
         data:{
             'username':infor.username,
             'name':infor.name,
@@ -151,10 +149,13 @@ function toSign(direction,email,tel,message){
             'email':email
         },
         success:function(r){
-            sessionStorage.setItem('infor',JSON.stringify(r.inf.obj));
             if(r.err){
+                $("#subWait").css('display','none');
+                $("#sub").css('display','block');
                 showFail(changeErr(r.errtype));
             }else{
+                $("#subWait").css('display','none');
+                $("#sub").css('display','block');
                 $('#signup').css('display','none');
                 showSuc("报名成功！");
                 $("#suc button").click(getInfo);
@@ -172,10 +173,10 @@ function loginOut(){
     $.ajax({
         url : 'https://join.xiyoumobile.com/api/deletesession',
         type : 'get',
-        dataType : 'JSONP',
-        // xhrFields: {
-        //     withCredentials: true,
-        // },
+        dataType : 'JSON',
+        xhrFields: {
+            withCredentials: true,
+        },
         success : function(r){
             if(r.err){
                 showFail("同学你已经退出了！");
@@ -193,7 +194,6 @@ function loginOut(){
 
 //展示报名界面
 function showSigntable(infor){
-    console.log('显示报名界面：');
     document.getElementById('stuName').innerHTML = infor.name;
     document.getElementById('stuClass').innerHTML = infor.class;
     $('#signup').css('display','block');
@@ -301,12 +301,13 @@ function isRight(message){
 function checkContact(email,phone,mess){
     if(isPhone(phone)){
         if(isMail(email)){
-            if(isRight(mess)){
-                return true;
-            }else{
-                showFail('请输入合法的留言！');
-                return false;
-            }
+            // if(isRight(mess)){
+            //     return true;
+            // }else{
+            //     showFail('请输入合法的留言！');
+            //     return false;
+            // }
+            return true;
         }else{
             showFail('请输入正确的邮箱!');
             return false;
@@ -331,9 +332,6 @@ function sql_str(){
     var str="and,delete,or,exec,insert,select,union,update,count,*,',join,>,<";
     return str;
 }
-
-
-
 //转换后台状态信息
 function changeStatus(str) {
     if(str === 'Pass through'){
@@ -345,7 +343,7 @@ function changeStatus(str) {
     }else if(str === 'Have been accepted'){
         return '录取';
     }else if(str === 'Luminescence'){
-        return ''
+        return '再接再励';
     }else if(str === 'login'){
         return '未面试';
     }else{
@@ -354,32 +352,48 @@ function changeStatus(str) {
 }
 //改变组名
 function changeGroup(str){
-    if(str === 'web'){
-        return 'Web组';
-    }else if(str === 'android'){
-        return 'Andorid组';
-    }else if(str === 'ios'){
-        return 'iOS组';
-    }else{
-        return 'Java后台';
+    switch(str){
+        case "web":
+            return 'Web组';
+            break;
+        case "android":
+            return 'Android组';
+            break;
+        case "ios":
+            return 'iOS组';
+            break;
+        case "java后台":
+            return "Java后台";
+            break;
+        case " " :
+            return '未明确意向';
+            break;
     }
 }
 function toChange(str) {
-    if(str === 'Android'){
-        return 'android';
-    }else if(str === 'Web'){
-        return 'web';
-    }else if(str === 'iOS'){
-        return 'ios';
-    }else{
-        return 'java后台';
+    switch(str){
+        case "Android":
+            return "android";
+            break;
+        case "Web":
+            return "web";
+            break;
+        case "iOS":
+            return "ios";
+            break;
+        case "Java后台":
+            return 'java后台';
+            break;
+        case "未明确意向":
+            return " ";
+            break;
     }
 }
 //设置当前页面的组
 function setGroup(activeIndex){
     switch(activeIndex+1){
         case 3:
-            $("#direction #now").html("Andorid");
+            $("#direction #now").html("Android");
             break;
         case 4:
             $("#direction #now").html("iOS");
@@ -403,9 +417,9 @@ function changeErr(str){
     }else if(str === 'username err'){
         return '用户名不存在或未参加教学活动';
     }else if((str === 'no access')||(str === 'session is out')||(str ==='please check session')||(str === 'please check parameters')||(str === 'parameters err')){
-        return '没有访问权利！';
+        return '请检查你的信息！或者刷新重试！';
     }else if(str === 'please check session'){
-        return '没有访问权利！';
+        return '请检查你的信息！或者刷新重试！';
     }else if(str === 'get vercode too mary params'){
         return '您还未登录！';
     }else if(str === "can't get vercode！"){
@@ -420,6 +434,8 @@ function changeErr(str){
         return '邮箱错误！';
     }else if(str === 'direction err'){
         return '方向错误！';
+    }else{
+        return str;
     }
 }
  function outSuc(){
@@ -437,4 +453,12 @@ function clearInput(){
     $('#login #vcode').val("");
     $('#signup input').val("");
     $('#signup textarea').val("");
+}
+function checkGrade(str){
+    var gradeNumber = Number(str[2]+str[3]);
+    if(gradeNumber<16){
+        return false;
+    }else{
+        return true;
+    }
 }

@@ -218,6 +218,41 @@
     color: white;
     text-align: center;
     background:#67A869;
+    display: block;
+}
+
+#subWait{
+    width: 33%;
+    height: 2.5rem;
+    font-size: 1.3rem;
+    margin:0 auto;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+    color: white;
+    text-align: center;
+    background:#67A869;
+    display: none;
+}
+.circleMoveTop{
+    width: 100%;
+    height:0.3rem;
+}
+.circleMoveSub{
+     width: 1.4rem;
+     height:1.4rem;
+     border: 3px solid #F3533C;
+     border-radius: 50%;
+     border-top-color: #67A869;
+     margin: 0 auto;
+     animation: waitLogin linear 1.5s both infinite;;
+ }
+@-webkit-keyframes waitLogin {
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(-360deg);}
+}
+@keyframes waitLogin {
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(-360deg);}
 }
 
 .infor-line .infor-value{
@@ -248,7 +283,7 @@
 
 #direction .selected{
     width: 100%;
-    height: 400%;
+    height: 500%;
     font-size: 1rem;
     text-align: center;
     color: white;
@@ -418,7 +453,7 @@
 #suc,#fail{
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     z-index: 9;
@@ -440,7 +475,7 @@
 
 #fail .pop, #suc .pop{
     width: 18rem;
-    height: 12rem;
+    height: 15rem;
     background: white;
     position: relative;
     border-radius: 10px;
@@ -528,11 +563,18 @@
     left:50%;
     margin-left: -10rem;
     top: 30%;
-    display: none;
 }
 .loadingPic{
     position: absolute;
     left:4rem;
     width:20rem;
     height:auto;
+}
+.loadingHint{
+    position: absolute;
+    width:10rem;
+    top:9rem;
+    left:50%;
+    margin-left:-8rem;
+    color: whitesmoke;
 }

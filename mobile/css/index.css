@@ -223,7 +223,7 @@ body {
 }
 
 #slide3-2 .android-info {
-    height:70%;width:24rem;
+    height:72%;width:24rem;
     overflow: auto;
     position:absolute;
     background-image: url("../img/android-info.png");
@@ -240,7 +240,7 @@ body {
     position:absolute;
     left:50%;
     margin-left: -8.5rem;
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: white;
     text-align: left;
     overflow: auto;
@@ -340,7 +340,7 @@ body {
     opacity: 0;
 }
 #slide4-2 .ios-info {
-    height:70%;width:24rem;
+    height:73%;width:24rem;
     overflow: auto;
     position:absolute;
     background-image: url("../img/ios-info.png");
@@ -357,7 +357,7 @@ body {
     position:absolute;
     left:50%;
     margin-left: -8rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: white;
     text-align: left;
 }
@@ -451,7 +451,7 @@ body {
     opacity: 0;
 }
 #slide5-2 .web-info {
-    height:70%;width:24rem;
+    height:72%;width:24rem;
     overflow: auto;
     position:absolute;
     background-image: url("../img/web-info.png");
@@ -468,7 +468,7 @@ body {
     position:absolute;
     left:50%;
     margin-left: -8rem;
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: white;
     text-align: left;
 }
@@ -556,7 +556,7 @@ body {
     margin-left: -7rem;
 }
 .javaWeb-info{
-    height:70%;width:24rem;
+    height:72%;width:24rem;
     overflow: auto;
     position:absolute;
     background-image: url("../img/java-info.png");
@@ -572,7 +572,7 @@ body {
     top:24%;
     position:absolute;
     left:50%;
-    font-size: 0.98rem;
+    font-size: 0.9rem;
     margin-left: -9rem;
     color: white;
     text-align: left;
